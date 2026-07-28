@@ -55,8 +55,8 @@ Ensure you have **Node.js** (v18 or higher) and **npm** or **yarn** installed.
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/prajwalmohan01/prajwal-portfolio.git
-cd prajwal-portfolio
+git clone https://github.com/prajwalmohan01/Prajwal.git
+cd prajwal
 ```
 
 ### 3. Install Dependencies
@@ -80,9 +80,11 @@ The compiled output will be generated in the `dist/` directory.
 
 ## 🌐 Deploying to Vercel
 
+Eg:- 
+
 1. Push your repository to **GitHub**.
 2. Go to [Vercel](https://vercel.com/) and click **Add New Project**.
-3. Import your `prajwal-portfolio` GitHub repository.
+3. Import your `prajwal` GitHub repository.
 4. Framework Preset will automatically detect **Vite**.
 5. Leave Build Command as `npm run build` and Output Directory as `dist`.
 6. Click **Deploy**!
@@ -96,7 +98,7 @@ The compiled output will be generated in the `dist/` directory.
 **Prajwal G N**
 - **GitHub**: [@prajwalmohan01](https://github.com/prajwalmohan01)
 - **LinkedIn**: [Prajwal G N](https://linkedin.com/in/prajwalmohan)
-- **Portfolio**: [Prajwal G N Portfolio](https://prajwalmohan01.github.io)
+- **Portfolio**: [Prajwal G N Portfolio](https://prajwalmohan04.vercel.app/)
 
 ---
 
