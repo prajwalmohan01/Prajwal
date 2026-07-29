@@ -87,7 +87,7 @@ Eg:
 3. Import your `prajwal-portfolio` GitHub repository.
 4. Framework Preset will automatically detect **Vite**.
 5. Leave Build Command as `npm run build` and Output Directory as `dist`.
-6. Click **Deploy**!
+6. Click on **Deploy**!
 
 > **Note**: The included `vercel.json` ensures all route refreshes (e.g., `/project/1`) correctly fallback to `index.html`.
 
