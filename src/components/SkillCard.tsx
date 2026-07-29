@@ -47,28 +47,28 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       whileHover={{ y: -4 }}
-      className="p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 shadow-sm transition-all space-y-3"
+      className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-sm transition-all space-y-3"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-xl bg-slate-800 border border-slate-700">
+          <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
             {renderIcon(skill.iconName)}
           </div>
           <div>
-            <h4 className="font-bold text-sm text-white">{skill.name}</h4>
-            <span className="text-[10px] text-slate-400 font-mono uppercase tracking-wider">{skill.category}</span>
+            <h4 className="font-bold text-sm text-slate-900 dark:text-white">{skill.name}</h4>
+            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wider">{skill.category}</span>
           </div>
         </div>
 
-        <span className="text-xs font-mono font-bold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-lg border border-blue-500/20">
+        <span className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-lg border border-blue-500/20">
           {skill.percentage}%
         </span>
       </div>
 
-      <p className="text-[11px] text-slate-400 leading-tight">{skill.description}</p>
+      <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">{skill.description}</p>
 
       {/* Progress Bar */}
-      <div className="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+      <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.percentage}%` }}

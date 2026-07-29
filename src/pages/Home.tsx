@@ -136,27 +136,27 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="w-full px-5 py-6 sm:px-6 sm:py-8 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-8 relative overflow-hidden group shadow-xl"
+            className="w-full px-5 py-6 sm:px-6 sm:py-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between space-y-8 relative overflow-hidden group shadow-xl"
           >
             <div className="space-y-4 relative z-10">
-              <h2 className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+              <h2 className="text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest text-xs mb-3 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
                 Prajwal G N
               </h2>
 
               <div>
-                <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight">
                   Full Stack <br />
-                  <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">Web Developer</span>
+                  <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 dark:from-blue-400 dark:via-cyan-300 dark:to-purple-400 bg-clip-text text-transparent">Web Developer</span>
                 </h1>
 
-                <div className="h-8 mt-3 flex items-center text-lg sm:text-2xl font-bold text-slate-200 font-mono">
-                  <span className="text-blue-400">{typedText}</span>
-                  <span className="w-0.5 h-6 bg-blue-400 ml-1 animate-pulse" />
+                <div className="h-8 mt-3 flex items-center text-lg sm:text-2xl font-bold text-slate-800 dark:text-slate-200 font-mono">
+                  <span className="text-blue-600 dark:text-blue-400">{typedText}</span>
+                  <span className="w-0.5 h-6 bg-blue-600 dark:bg-blue-400 ml-1 animate-pulse" />
                 </div>
               </div>
 
-              <p className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
                 I transform complex ideas into high-performance, beautiful, and scalable web solutions with modern tech stacks.
               </p>
             </div>
@@ -193,9 +193,9 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                   }
                 }}
-                className="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-6 py-3.5 rounded-2xl font-bold text-sm shadow-md transition-all cursor-pointer flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+                className="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 px-6 py-3.5 rounded-2xl font-bold text-sm shadow-md transition-all cursor-pointer flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <Code2 className="w-4 h-4 text-cyan-400" />
+                <Code2 className="w-4 h-4 text-blue-600 dark:text-cyan-400" />
                 <span>View Projects</span>
               </a>
             </div>
@@ -207,47 +207,47 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
       <section id="about">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* About Me Bento Card */}
-          <div className="lg:col-span-7 px-5 py-6 sm:px-6 sm:py-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl space-y-4">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+          <div className="lg:col-span-7 px-5 py-6 sm:px-6 sm:py-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+            <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest">
               About Me
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white leading-tight">
               Transforming Ideas into Real-World Software Solutions
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
               {PERSONAL_INFO.about}
             </p>
           </div>
 
           {/* Location & Quick Contact Cards */}
           <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl px-5 py-5 flex flex-col justify-between shadow-xl">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl px-5 py-5 flex flex-col justify-between shadow-xl">
               <div className="flex justify-between items-start">
-                <div className="p-3 bg-slate-800 border border-slate-700 rounded-2xl">
-                  <MapPin className="w-5 h-5 text-blue-400" />
+                <div className="p-3 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl">
+                  <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 </div>
-                <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Based In</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest">Based In</span>
               </div>
               <div className="mt-4">
-                <h3 className="text-2xl font-bold text-white leading-tight">Bengaluru, India</h3>
-                <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Karnataka State</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-tight">Bengaluru, India</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-medium">Karnataka State</p>
               </div>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl px-5 py-5 flex flex-col justify-between relative overflow-hidden shadow-xl">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl px-5 py-5 flex flex-col justify-between relative overflow-hidden shadow-xl">
               <div>
-                <h4 className="text-[10px] text-slate-400 uppercase font-bold tracking-widest mb-3">Quick Contact</h4>
-                <p className="text-white text-xs font-medium truncate">{PERSONAL_INFO.email}</p>
-                <p className="text-white text-xs font-medium mt-1">{PERSONAL_INFO.phone}</p>
+                <h4 className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest mb-3">Quick Contact</h4>
+                <p className="text-slate-900 dark:text-white text-xs font-medium truncate">{PERSONAL_INFO.email}</p>
+                <p className="text-slate-900 dark:text-white text-xs font-medium mt-1">{PERSONAL_INFO.phone}</p>
               </div>
               <div className="flex space-x-2 mt-4">
-                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-blue-400 transition-colors">
+                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href={PERSONAL_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-pink-400 transition-colors">
+                <a href={PERSONAL_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a href={PERSONAL_INFO.portfolio} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-colors">
+                <a href={PERSONAL_INFO.portfolio} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                   <Globe className="w-4 h-4" />
                 </a>
               </div>
@@ -259,10 +259,10 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
       {/* ================= WHAT I'M DOING (4 CARDS) ================= */}
       <section id="services" className="space-y-6">
         <div>
-          <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+          <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest">
             What I'm Doing
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">
             Core Expertise & Technical Specializations
           </h2>
         </div>
@@ -276,23 +276,23 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -6 }}
-              className="px-4 py-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 shadow-xl transition-all space-y-4 flex flex-col justify-between"
+              className="px-4 py-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-xl transition-all space-y-4 flex flex-col justify-between"
             >
               <div className="space-y-3">
-                <div className="p-3 rounded-2xl bg-slate-800 border border-slate-700 text-blue-400 w-fit">
+                <div className="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-blue-600 dark:text-blue-400 w-fit">
                   {item.iconName === 'Layers' && <Layers className="w-6 h-6" />}
-                  {item.iconName === 'Layout' && <Layout className="w-6 h-6 text-cyan-400" />}
-                  {item.iconName === 'Server' && <Server className="w-6 h-6 text-purple-400" />}
-                  {item.iconName === 'CheckSquare' && <CheckSquare className="w-6 h-6 text-emerald-400" />}
+                  {item.iconName === 'Layout' && <Layout className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />}
+                  {item.iconName === 'Server' && <Server className="w-6 h-6 text-purple-600 dark:text-purple-400" />}
+                  {item.iconName === 'CheckSquare' && <CheckSquare className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />}
                 </div>
 
-                <h3 className="text-base font-bold text-white">{item.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{item.description}</p>
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">{item.title}</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{item.description}</p>
               </div>
 
               <div className="flex flex-wrap gap-1.5 pt-2">
                 {item.tags.map(tag => (
-                  <span key={tag} className="px-2.5 py-0.5 rounded-lg bg-slate-800 text-[10px] text-slate-400 border border-slate-700">
+                  <span key={tag} className="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
                     {tag}
                   </span>
                 ))}
@@ -305,10 +305,10 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
       {/* ================= PROFILE HIGHLIGHTS (3 CARDS WITH PROGRESS) ================= */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {PROFILE_HIGHLIGHTS.map((high, idx) => (
-          <div key={high.title} className="px-4 py-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl flex items-center justify-between">
+          <div key={high.title} className="px-4 py-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center justify-between">
             <div className="space-y-1">
-              <h3 className="font-bold text-base text-white">{high.title}</h3>
-              <p className="text-xs text-slate-400">{high.subtitle}</p>
+              <h3 className="font-bold text-base text-slate-900 dark:text-white">{high.title}</h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400">{high.subtitle}</p>
             </div>
 
             {/* Circular Progress Meter */}
@@ -327,7 +327,7 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
                   fill="transparent"
                 />
               </svg>
-              <span className="absolute text-xs font-extrabold text-white font-mono">{high.metric}</span>
+              <span className="absolute text-xs font-extrabold text-slate-900 dark:text-white font-mono">{high.metric}</span>
             </div>
           </div>
         ))}
@@ -337,10 +337,10 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
       <section id="skills" className="space-y-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 pt-2">
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+            <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest">
               Technical Expertise
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-white mt-0.5">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
               Skills & Proficiencies
             </h2>
           </div>
@@ -355,7 +355,7 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
                 className={`px-3 py-1 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                   skillCategory === cat
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
-                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                    : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800'
                 }`}
               >
                 {cat}
@@ -374,56 +374,56 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
       {/* ================= RESUME & TIMELINE SECTION ================= */}
       <section id="resume" className="space-y-4">
         <div>
-          <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+          <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest">
             Career Journey
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">
             Education & Professional Experience
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Education Column */}
-          <div className="px-5 py-6 sm:px-6 sm:py-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl space-y-6">
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-blue-400" /> Education Timeline
+          <div className="px-5 py-6 sm:px-6 sm:py-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <GraduationCap className="w-5 h-5 text-blue-600 dark:text-blue-400" /> Education Timeline
             </h3>
 
-            <div className="space-y-6 pl-4 border-l-2 border-slate-800">
+            <div className="space-y-6 pl-4 border-l-2 border-slate-200 dark:border-slate-800">
               {EDUCATION_DATA.map(edu => (
                 <div key={edu.id} className="relative space-y-1">
-                  <div className="absolute -left-[23px] top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-2 border-slate-900" />
+                  <div className="absolute -left-[23px] top-1.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-2 border-white dark:border-slate-900" />
                   <div className="flex items-center justify-between">
-                    <h4 className="font-semibold text-white text-sm">{edu.degree}</h4>
-                    <span className="text-[10px] font-mono text-blue-400 px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">
+                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">{edu.degree}</h4>
+                    <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">
                       {edu.period}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">{edu.institution}</p>
-                  <p className="text-xs text-slate-300 leading-relaxed">{edu.description}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">{edu.institution}</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{edu.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Experience Column */}
-          <div className="px-5 py-6 sm:px-6 sm:py-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl space-y-6">
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <Briefcase className="w-5 h-5 text-purple-400" /> Experience Timeline
+          <div className="px-5 py-6 sm:px-6 sm:py-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <Briefcase className="w-5 h-5 text-purple-600 dark:text-purple-400" /> Experience Timeline
             </h3>
 
-            <div className="space-y-6 pl-4 border-l-2 border-slate-800">
+            <div className="space-y-6 pl-4 border-l-2 border-slate-200 dark:border-slate-800">
               {EXPERIENCE_DATA.map(exp => (
                 <div key={exp.id} className="relative space-y-1">
-                  <div className="absolute -left-[23px] top-1.5 w-3.5 h-3.5 rounded-full bg-purple-500 border-2 border-slate-900" />
+                  <div className="absolute -left-[23px] top-1.5 w-3.5 h-3.5 rounded-full bg-purple-500 border-2 border-white dark:border-slate-900" />
                   <div className="flex items-center justify-between">
-                    <h4 className="font-semibold text-white text-sm">{exp.role}</h4>
-                    <span className="text-[10px] font-mono text-purple-300 px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">
+                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">{exp.role}</h4>
+                    <span className="text-[10px] font-mono text-purple-600 dark:text-purple-300 px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">{exp.company} • {exp.location}</p>
-                  <ul className="text-xs text-slate-300 space-y-1 pt-1">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">{exp.company} • {exp.location}</p>
+                  <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1 pt-1">
                     {exp.highlights.slice(0, 3).map((h, i) => (
                       <li key={i} className="flex items-start gap-1.5">
                         <span className="text-blue-500">•</span>
@@ -436,18 +436,16 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
             </div>
           </div>
         </div>
-
-
       </section>
 
       {/* ================= PROJECTS SECTION ================= */}
       <section id="projects" className="space-y-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
           <div>
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+            <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest">
               Project Portfolio
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-white mt-0.5">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
               Featured Web Engineering Projects
             </h2>
           </div>
@@ -460,7 +458,7 @@ export const Home: React.FC<HomeProps> = ({ onToast }) => {
               value={projectSearch}
               onChange={e => setProjectSearch(e.target.value)}
               placeholder="Search projects..."
-              className="w-full pl-10 pr-4 py-2 rounded-2xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 shadow-sm"
+              className="w-full pl-10 pr-4 py-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 shadow-sm"
             />
           </div>
         </div>

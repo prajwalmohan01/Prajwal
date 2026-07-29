@@ -2,7 +2,7 @@
 
 A modern, high-performance developer portfolio built with **React 18**, **TypeScript**, **Tailwind CSS**, and **Motion (Framer Motion)**. Features a live GitHub integration, dynamic project showcases, interactive tech stack explorer, dark futuristic aesthetic, and contact form integration.
 
-![Portfolio Preview](https://raw.githubusercontent.com/prajwalmohan01/prajwalmohan01/main/preview.png)
+![Portfolio Preview](https://prajwalmohan04.vercel.app)
 
 ---
 
@@ -55,7 +55,7 @@ Ensure you have **Node.js** (v18 or higher) and **npm** or **yarn** installed.
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/prajwalmohan01/Prajwal.git
+git clone https://github.com/prajwalmohan01/prajwal.git
 cd prajwal
 ```
 
@@ -80,11 +80,11 @@ The compiled output will be generated in the `dist/` directory.
 
 ## 🌐 Deploying to Vercel
 
-Eg:- 
+Eg:
 
 1. Push your repository to **GitHub**.
 2. Go to [Vercel](https://vercel.com/) and click **Add New Project**.
-3. Import your `prajwal` GitHub repository.
+3. Import your `prajwal-portfolio` GitHub repository.
 4. Framework Preset will automatically detect **Vite**.
 5. Leave Build Command as `npm run build` and Output Directory as `dist`.
 6. Click **Deploy**!
@@ -98,7 +98,7 @@ Eg:-
 **Prajwal G N**
 - **GitHub**: [@prajwalmohan01](https://github.com/prajwalmohan01)
 - **LinkedIn**: [Prajwal G N](https://linkedin.com/in/prajwalmohan)
-- **Portfolio**: [Prajwal G N Portfolio](https://prajwalmohan04.vercel.app/)
+- **Portfolio**: [Prajwal G N Portfolio](https://prajwalmohan04.vercel.app)
 
 ---
 

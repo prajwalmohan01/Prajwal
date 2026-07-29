@@ -17,13 +17,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
       whileHover={{ y: -6 }}
-      className="group relative flex flex-col justify-between px-4 py-5 sm:px-5 sm:py-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 shadow-xl transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col justify-between px-4 py-5 sm:px-5 sm:py-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-md dark:shadow-xl transition-all duration-300 overflow-hidden"
     >
       <div className="space-y-4 relative z-10">
         {/* Project Thumbnail Image with Lightbox trigger */}
         <div
           onClick={() => onOpenLightbox?.(project.image, `${project.title} - ${project.shortDescription}`)}
-          className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-black/60 border border-slate-800 cursor-pointer group/img"
+          className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 dark:bg-black/60 border border-slate-200 dark:border-slate-800 cursor-pointer group/img"
         >
           <img
             src={project.image}
@@ -47,16 +47,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
         {/* Title & Category */}
         <div>
           <div className="flex items-center justify-between text-xs mb-2">
-            <span className="px-2.5 py-0.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase rounded-full tracking-wider">{project.category}</span>
+            <span className="px-2.5 py-0.5 bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase rounded-full tracking-wider">{project.category}</span>
           </div>
 
           <Link to={`/project/${project.id}`} className="block group/title">
-            <h3 className="text-xl font-bold text-white group-hover/title:text-blue-400 transition-colors line-clamp-1">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover/title:text-blue-600 dark:group-hover/title:text-blue-400 transition-colors line-clamp-1">
               {project.title}
             </h3>
           </Link>
 
-          <p className="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
             {project.shortDescription}
           </p>
         </div>
@@ -66,13 +66,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
           {project.techStack.slice(0, 4).map(tech => (
             <span
               key={tech}
-              className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-medium text-slate-300 bg-slate-800/80 border border-slate-700/60"
+              className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60"
             >
               {tech}
             </span>
           ))}
           {project.techStack.length > 4 && (
-            <span className="px-2 py-1 rounded-lg text-[10px] font-mono text-slate-400 bg-slate-800/80 border border-slate-700/60">
+            <span className="px-2 py-1 rounded-lg text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
               +{project.techStack.length - 4}
             </span>
           )}
@@ -80,17 +80,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
       </div>
 
       {/* Action Buttons Footer */}
-      <div className="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between gap-2 relative z-10">
+      <div className="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 relative z-10">
         <div className="flex items-center gap-2">
           {project.demoUrl && (
             <a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer"
+              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-all cursor-pointer"
               title="Live Demo"
             >
-              <ExternalLink className="w-4 h-4 text-blue-400" />
+              <ExternalLink className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             </a>
           )}
 
@@ -99,10 +99,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer"
+              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-all cursor-pointer"
               title="GitHub Source Code"
             >
-              <Github className="w-4 h-4 text-purple-400" />
+              <Github className="w-4 h-4 text-purple-600 dark:text-purple-400" />
             </a>
           )}
         </div>
