@@ -56,7 +56,11 @@ Ensure you have **Node.js** (v18 or higher) and **npm** or **yarn** installed.
 ### 2. Clone the Repository
 ```bash
 git clone https://github.com/prajwalmohan01/prajwal.git
+<<<<<<< HEAD
 cd prajwal
+=======
+cd prajwal-portfolio
+>>>>>>> 553580f0b36ec90e633d38710a005e4f86c26806
 ```
 
 ### 3. Install Dependencies
