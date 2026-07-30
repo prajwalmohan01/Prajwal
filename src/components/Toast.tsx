@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle2, AlertCircle, Info, X } from 'lucide-react';
+import { FiCheckCircle, FiAlertCircle, FiInfo, FiX } from 'react-icons/fi';
 
 export interface ToastMessage {
   id: string;
@@ -25,22 +25,22 @@ export const ToastContainer: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.25 }}
-            className="pointer-events-auto flex items-start gap-3 p-4 rounded-xl backdrop-blur-xl bg-slate-900/90 dark:bg-slate-900/90 border border-slate-700/60 shadow-2xl shadow-blue-900/20 text-white"
+            className="pointer-events-auto flex items-start gap-3 p-4 rounded-xl backdrop-blur-xl bg-white/95 border border-slate-200/90 shadow-xl text-slate-900"
           >
             <div className="mt-0.5 shrink-0">
               {toast.type === 'error' ? (
-                <AlertCircle className="w-5 h-5 text-rose-400" />
+                <FiAlertCircle className="w-5 h-5 text-rose-600" />
               ) : toast.type === 'info' ? (
-                <Info className="w-5 h-5 text-cyan-400" />
+                <FiInfo className="w-5 h-5 text-cyan-600" />
               ) : (
-                <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                <FiCheckCircle className="w-5 h-5 text-emerald-600" />
               )}
             </div>
 
             <div className="flex-1 min-w-0">
-              <h4 className="text-sm font-semibold text-slate-100">{toast.title}</h4>
+              <h4 className="text-sm font-semibold text-slate-900">{toast.title}</h4>
               {toast.description && (
-                <p className="text-xs text-slate-300 mt-0.5 line-clamp-2">{toast.description}</p>
+                <p className="text-xs text-slate-600 mt-0.5 line-clamp-2">{toast.description}</p>
               )}
             </div>
 
@@ -49,7 +49,7 @@ export const ToastContainer: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
               className="p-1 text-slate-400 hover:text-white rounded-lg transition-colors shrink-0"
               aria-label="Dismiss message"
             >
-              <X className="w-4 h-4" />
+              <FiX className="w-4 h-4" />
             </button>
           </motion.div>
         ))}
