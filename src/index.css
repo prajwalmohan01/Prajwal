@@ -8,6 +8,6 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-slate-100 transition-colors duration-300;
+    @apply bg-slate-50 text-slate-900 antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300;
   }
 }

@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ToastContainer, ToastMessage } from './components/Toast';
+import { SplashScreen } from './components/SplashScreen';
 import { Home } from './pages/Home';
 import { ProjectDetails } from './pages/ProjectDetails';
-import { useTheme } from './hooks/useTheme';
+import { AllProjects } from './pages/AllProjects';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -20,7 +21,6 @@ function ScrollToTop() {
 
 interface PageWrapperProps {
   children: React.ReactNode;
-  key?: string;
 }
 
 function PageWrapper({ children }: PageWrapperProps) {
@@ -41,19 +41,27 @@ function AnimatedRoutes({ addToast }: { addToast: (title: string, description?: 
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location}>
+      <Routes location={location} key={location.pathname}>
         <Route
           path="/"
           element={
-            <PageWrapper key={location.pathname}>
+            <PageWrapper>
               <Home onToast={addToast} />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <PageWrapper>
+              <AllProjects onToast={addToast} />
             </PageWrapper>
           }
         />
         <Route
           path="/project/:id"
           element={
-            <PageWrapper key={location.pathname}>
+            <PageWrapper>
               <ProjectDetails onToast={addToast} />
             </PageWrapper>
           }
@@ -61,7 +69,7 @@ function AnimatedRoutes({ addToast }: { addToast: (title: string, description?: 
         <Route
           path="*"
           element={
-            <PageWrapper key={location.pathname}>
+            <PageWrapper>
               <Home onToast={addToast} />
             </PageWrapper>
           }
@@ -72,8 +80,6 @@ function AnimatedRoutes({ addToast }: { addToast: (title: string, description?: 
 }
 
 export default function App() {
-  const { theme, toggleTheme } = useTheme();
-
   // Toast State
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
@@ -92,16 +98,14 @@ export default function App() {
 
   return (
     <Router>
+      <SplashScreen />
       <ScrollToTop />
-      <div className="min-h-screen bg-slate-50 dark:bg-[#050505] text-slate-900 dark:text-slate-100 font-sans antialiased relative overflow-x-hidden transition-colors duration-300">
+      <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased relative overflow-x-hidden">
         {/* Background Grid */}
-        <div className="fixed inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40 dark:opacity-30 pointer-events-none z-0" />
+        <div className="fixed inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none z-0" />
 
         {/* Floating Navbar */}
-        <Navbar
-          theme={theme}
-          onToggleTheme={toggleTheme}
-        />
+        <Navbar />
 
         {/* Main Content Viewport */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-[calc(100vh-200px)] py-6">

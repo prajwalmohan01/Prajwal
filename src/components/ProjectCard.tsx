@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { FiExternalLink, FiArrowRight } from 'react-icons/fi';
+import { FaGithub } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import { Project } from '../data/projects';
 
@@ -17,13 +18,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
       whileHover={{ y: -6 }}
-      className="group relative flex flex-col justify-between px-4 py-5 sm:px-5 sm:py-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-md dark:shadow-xl transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col justify-between px-4 py-5 sm:px-5 sm:py-5 rounded-2xl bg-white border border-slate-200/90 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
     >
       <div className="space-y-4 relative z-10">
         {/* Project Thumbnail Image with Lightbox trigger */}
         <div
           onClick={() => onOpenLightbox?.(project.image, `${project.title} - ${project.shortDescription}`)}
-          className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 dark:bg-black/60 border border-slate-200 dark:border-slate-800 cursor-pointer group/img"
+          className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer group/img"
         >
           <img
             src={project.image}
@@ -32,14 +33,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
             referrerPolicy="no-referrer"
           />
 
-          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-            <span className="text-xs font-semibold text-white px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 shadow-lg">
+          <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+            <span className="text-xs font-semibold text-white px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/20 shadow-lg">
               Click to Zoom
             </span>
           </div>
 
           {/* Status Badge */}
-          <div className="absolute top-3 right-3 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-black/70 backdrop-blur-md border border-slate-700 text-blue-400">
+          <div className="absolute top-3 right-3 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-slate-900/80 backdrop-blur-md border border-slate-700 text-blue-300">
             {project.status}
           </div>
         </div>
@@ -47,16 +48,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
         {/* Title & Category */}
         <div>
           <div className="flex items-center justify-between text-xs mb-2">
-            <span className="px-2.5 py-0.5 bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase rounded-full tracking-wider">{project.category}</span>
+            <span className="px-2.5 py-0.5 bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-bold uppercase rounded-full tracking-wider">{project.category}</span>
           </div>
 
           <Link to={`/project/${project.id}`} className="block group/title">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover/title:text-blue-600 dark:group-hover/title:text-blue-400 transition-colors line-clamp-1">
+            <h3 className="text-xl font-bold text-slate-900 group-hover/title:text-blue-600 transition-colors line-clamp-1">
               {project.title}
             </h3>
           </Link>
 
-          <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
             {project.shortDescription}
           </p>
         </div>
@@ -66,13 +67,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
           {project.techStack.slice(0, 4).map(tech => (
             <span
               key={tech}
-              className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60"
+              className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-medium text-slate-700 bg-slate-100 border border-slate-200"
             >
               {tech}
             </span>
           ))}
           {project.techStack.length > 4 && (
-            <span className="px-2 py-1 rounded-lg text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+            <span className="px-2 py-1 rounded-lg text-[10px] font-mono text-slate-500 bg-slate-100 border border-slate-200">
               +{project.techStack.length - 4}
             </span>
           )}
@@ -80,17 +81,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
       </div>
 
       {/* Action Buttons Footer */}
-      <div className="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 relative z-10">
+      <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between gap-2 relative z-10">
         <div className="flex items-center gap-2">
           {project.demoUrl && (
             <a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-all cursor-pointer"
+              className="p-2 rounded-xl backdrop-blur-md bg-white/80 hover:bg-white text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-sm transition-all cursor-pointer hover:scale-105 active:scale-95"
               title="Live Demo"
             >
-              <ExternalLink className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              <FiExternalLink className="w-4 h-4 text-blue-600" />
             </a>
           )}
 
@@ -99,20 +100,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenLightbo
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-all cursor-pointer"
+              className="p-2 rounded-xl backdrop-blur-md bg-white/80 hover:bg-white text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-sm transition-all cursor-pointer hover:scale-105 active:scale-95"
               title="GitHub Source Code"
             >
-              <Github className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+              <FaGithub className="w-4 h-4 text-purple-600" />
             </a>
           )}
         </div>
 
         <Link
           to={`/project/${project.id}`}
-          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-500/20 transition-all group/btn cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl backdrop-blur-md bg-blue-600/90 hover:bg-blue-600 text-white text-xs font-bold border border-blue-400/30 shadow-sm shadow-blue-500/20 transition-all group/btn cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
         >
           <span>See Project Details</span>
-          <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+          <FiArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
         </Link>
       </div>
     </motion.div>

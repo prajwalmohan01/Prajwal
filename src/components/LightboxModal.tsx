@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ZoomIn } from 'lucide-react';
+import { FiX, FiZoomIn } from 'react-icons/fi';
 
 interface LightboxModalProps {
   imageUrl: string | null;
@@ -23,10 +23,10 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ imageUrl, caption,
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer z-50"
+          className="absolute top-6 right-6 p-3 rounded-full backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 text-white shadow-lg transition-all cursor-pointer z-50 hover:scale-105 active:scale-95"
           aria-label="Close Lightbox"
         >
-          <X className="w-6 h-6" />
+          <FiX className="w-6 h-6" />
         </button>
 
         <motion.div
@@ -46,7 +46,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ imageUrl, caption,
           {caption && (
             <div className="mt-4 px-6 py-3 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 text-white text-xs sm:text-sm font-medium text-center max-w-2xl">
               <span className="flex items-center justify-center gap-2">
-                <ZoomIn className="w-4 h-4 text-blue-400" />
+                <FiZoomIn className="w-4 h-4 text-blue-400" />
                 {caption}
               </span>
             </div>
